@@ -16,6 +16,8 @@
                 </div>
 
                 <div class="card-body">
+
+                    @include('layouts._messages')
                   
                   @foreach ($questions as $question)
                       <div class="media">
@@ -39,7 +41,10 @@
                             </p>
                           {{ str_limit($question->body, 250) }}
                           </div>
+                          
                       </div>
+
+                      <hr>
                   @endforeach
 
                         {{ $questions->links() }}
