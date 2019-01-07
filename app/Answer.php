@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
 {
+    protected $fillable = ['body', 'user_id', 'question_id', 'votes_count'];
     public function question()
     {
         return $this->belongsTo('App\Question');
@@ -38,4 +39,5 @@ class Answer extends Model
     {
         return $this->created_at->diffForHumans();
     }
+    
 }
